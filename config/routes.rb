@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'signup' => 'users#signup', :as => 'signup'
+  get 'login' => 'users#login', :as => 'login'
+  delete 'logout' => 'users#logout', :as => 'logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -21,9 +24,11 @@ Rails.application.routes.draw do
     # patch 'issues/:id' => 'issues#update'
     # post '/issues' => 'issues#create'
     resources :issues
-
+    resources :users, only: [:create]
   # comments
-    post '/issues/:issue_id/comments' => "comments#create"
+    post '/issues/:issue_id/comments' => 'comments#create'
+    post 'create_login_session' => 'users#create_login_session'
+
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

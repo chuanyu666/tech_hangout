@@ -1,0 +1,30 @@
+<div class="login-form-container clearfix">
+  <div class="login-form">
+    <%= form_tag '/create_login_session' do %>
+        <dl class="form">
+          <dt>
+            <%= label_tag 'Username' %>
+          </dt>
+          <dd>
+            <%= text_field_tag :name, params[:name] %>
+          </dd>
+        </dl>
+        <dl class="form">
+          <dt>
+            <%= label_tag 'Password' %>
+          </dt>
+          <dd>
+            <%= password_field_tag :password, params[:password] %>
+          </dd>
+        </dl>
+        <dl class="form remember-me">
+          <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+          <%= label_tag :remember_me %>
+        </dl>
+        <p> <%= submit_tag 'Login', :class => 'login-button btn btn-primary' %> </p>
+        <div class="need-signup">
+          <%= link_to 'No account? Signup here', signup_path %>
+        </div>
+    <% end %>
+  </div>
+</div>
