@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     resources :issues
     resources :users, only: [:create]
   # comments
-    post '/issues/:issue_id/comments' => 'comments#create'
+    resources :comments, only: [:create]
     post 'create_login_session' => 'users#create_login_session'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):

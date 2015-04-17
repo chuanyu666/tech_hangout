@@ -1,24 +1,32 @@
 <div class="issue-heading">
   <div class="container">
     <%= @issue.title %>
-    <%= link_to 'Destroy', issue_path(@issue), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
-    <%= link_to 'Edit', edit_issue_path(@issue), class: "btn btn-primary" %>
+    <% if current_user && current_user == @issue.user %>
+        <%= link_to 'Destroy', issue_path(@issue), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+        <%= link_to 'Edit', edit_issue_path(@issue), class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>
 <div class="container">
   <div class="replies">
     <article class="reply clearfix">
       <div class="avatar">
-        <%= image_tag "default_avatar.png", class: 'image-circle' %>
+        <%= image_tag @issue.user.avatar, class: 'image-circle' %>
       </div>
       <div class="body">
         <div class="heading">
-          <h5 class="name"><a href="#">happypeter</a></h5>
+          <h5 class="name"><a><%= @issue.user.name %></a></h5>
         </div>
-        <%= @issue.content %>
+        <%= markdown(@issue.content) %>
       </div>
     </article>
-    <%= render partial: 'shared/comment_list', locals: {comments: @comments} %>
-    <%= render partial: 'shared/comment_box', locals: {issue: @issue} %>
+    <% @comments.each do |c| %>
+        <%= render partial: 'shared/comment', locals: {c: c} %>
+    <% end %>
   </div>
+  <% if current_user %>
+      <%= render partial: 'shared/comment_box', locals: {issue: @issue} %>
+  <% else %>
+     <%= link_to 'Please login to submit comment', login_path %>
+  <% end %>
 </div>

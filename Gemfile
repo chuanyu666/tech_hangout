@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
 ruby '2.2.1'
+
+gem 'jquery-atwho-rails'
+gem 'redcarpet'
+gem 'pygments.rb'
+
 gem 'font-awesome-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

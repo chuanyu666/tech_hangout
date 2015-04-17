@@ -15,8 +15,7 @@
       Tech Hangout
     </a>
     <ul class="nav left">
-      <li><%= link_to 'About', '/about' %></li>
-      <li><a href="#">placeholder</a></li>
+      <li><%= link_to 'About Me', '/about' %></li>
     </ul>
     <ul class="nav right">
       <% if current_user %>
@@ -30,13 +29,24 @@
   </div>
 </div>
 
+  <% if flash.notice %>
+    <div class="notice"><%= flash.notice %></div>
+<% end %>
+
 <%= yield %>
 
 <div class="footer">
   <div class="container">
-    footer
+    @2015 Techhangout.Inc
   </div>
 </div>
+
+<script>
+    var hideNotice = function(){
+       $(".notice").fadeOut("slow");
+     }
+    setTimeout(hideNotice, 4000);
+</script>
 
 </body>
 

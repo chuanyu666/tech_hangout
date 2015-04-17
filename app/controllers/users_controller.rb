@@ -8,10 +8,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    user.save
-    cookies[:auth_token] = user.auth_token
-    redirect_to :root
+    @user = User.new(user_params)
+    if @user.save
+      UserMailer.welcome_email(@user).deliver
+      cookies[:auth_token] = @user.auth_token
+      redirect_to :root
+    else
+      render :signup
+    end
   end
 
   def create_login_session
@@ -23,8 +27,10 @@ class UsersController < ApplicationController
       else
         cookies[:auth_token] = user.auth_token
       end
+      flash.notice = 'Login Success!'
       redirect_to :root
     else
+      flash.notice = 'Username or password incorrect!'
       redirect_to :login
     end
   end

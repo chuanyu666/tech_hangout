@@ -73,6 +73,17 @@ a:hover {
 
 // form.css
 form {
+  .error {
+    margin: 5px 0 9px 0;
+    color: #DB8A14;
+  }
+
+  * {
+    &:focus {
+      outline: none;
+    }
+  }
+
   input {
     font-size: 21px;
     width: 100%;
@@ -93,4 +104,17 @@ form {
   dd {
     margin: 0;
   }
+}
+
+.notice {
+  position: absolute;
+  z-index: 1000;
+  bottom: 20px;
+  right: 20px;
+  background: teal;
+  color: white;
+  padding: 20px;
+  -webkit-box-shadow: 6px 7px 9px -1px rgba(0,0,0,0.68);
+  -moz-box-shadow: 6px 7px 9px -1px rgba(0,0,0,0.68);
+  box-shadow: 6px 7px 9px -1px rgba(0,0,0,0.68);
 }

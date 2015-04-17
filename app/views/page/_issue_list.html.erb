@@ -3,16 +3,14 @@
   <% issues.each do |i| %>
     <article class="issue clearfix">
       <div class="avatar">
-        <a href="/happypeter">
-          <%= image_tag "default_avatar.png", class: 'image-circle' %>
+        <%= image_tag i.user.avatar, class: 'image-circle' %>
       </div>
       <div class="body">
         <h5 class="title">
           <%= link_to i.title, issue_path(i) %>
         </h5>
-        <a class="read-more" href="#">read</a>
         <span class="meta-data">
-          <a href="/happypeter">happypeter</a>
+          <a><%= i.user.name %></a>
           <%= time_ago_in_words(i.created_at) %> ago
         </span>
       </div>

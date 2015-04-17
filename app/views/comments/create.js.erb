@@ -1,0 +1,2 @@
+$(".replies").append("<%= j render(partial: 'shared/comment', locals: {c: @comment}) %>");
+$(".reply textarea").val('');

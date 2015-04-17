@@ -10,7 +10,12 @@ class IssuesController < ApplicationController
   end
 
   def new
-  	@issue = Issue.new
+    if not current_user
+      flash.notice = 'Please login'
+      redirect_to :root
+    else
+      @issue = Issue.new
+    end
   end
 
   def destroy
@@ -31,6 +36,6 @@ class IssuesController < ApplicationController
 
   private
   def issue_params
-    params.require(:issue).permit(:title, :content)
+    params.require(:issue).permit(:title, :content, :user_id)
   end
 end
