@@ -1,16 +1,324 @@
-<div class="container">
-  <table>
-    <tr>
-      <td>Name:</td>
-      <td>Chuan Yu</td>
-    </tr>
-    <tr>
-      <td>Education:</td>
-      <td>New Jersey Institute of Technology</td>
-    </tr>
-    <tr>
-      <td>Skill Set:</td>
-      <td>Java,Android,Ruby on Rails,Objective-c,Swift</td>
-    </tr>
-  </table>
+<style>
+    body { margin: 0;
+        padding: 0;
+        background-color: #fff font-size: 12px;
+        font-family: "source-sans-pro", sans-serif;
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+    * { box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    /*
+     Primary Rules
+    */
+    h1 { font-weight: 300;
+        font-style:italic;
+        margin: 5px 0 0;
+        font-size: 40px;
+        color: #5abaac;
+        padding: 0 10px 10px;
+        border-radius:2px;
+        font-family: 'merriweather', sans-serif;
+    }
+    h2 { color: #5abaac;
+        width: 150px;
+        font-size: 18px;
+        padding-left: 20px;
+        font-weight:400;
+        font-family: 'merriweather', sans-serif;
+    }
+    h2:first-letter { font-size: 150%; }
+    h3 { font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0;
+        line-height: 28px;
+        font-family: 'merriweather', sans-serif;
+    }
+    h2, h3 { margin-top: 5px }
+    a { color: #5abaac;
+        display: inline-block;
+        text-decoration: none;
+        padding:2px 4px;
+        border-radius:2px;
+        margin-right:-2px;
+    }
+    a:hover {
+        background-color:#5abaac;
+        color:#fff;
+    }
+
+    .section { border-bottom: 1px solid #ddd;
+        padding: 10px 0 15px;
+    }
+    .section:last-child { border: none }
+    .section-text { width: 80%;
+        font-size: 18px;
+        line-height: 24px;
+        margin: 10px 0 10px;
+        padding: 0 10px;
+    }
+    .subsection { margin: 10px 0 5px }
+    .desc { font-size: 16px; font-family: "source-sans-pro", sans-serif; color:#444;}
+    .contact-info { font-size: 16px;
+        text-align: right;
+    }
+    .emph { font-style: italic }
+    .light { color: #aaa;letter-spacing:1px;
+        font-size: 14px;
+        line-height:28px;
+        font-family: "source-sans-pro", sans-serif;
+        text-transform:uppercase;
+    }
+    ul{
+        padding-left:15px;
+    }
+
+    ul.skills{
+        float:left;
+        width:30%;
+        padding-left:0;
+        margin: 0 20px 0 0;
+    }
+
+    ul.skills li{
+        list-style: none;
+        font-size:16px;
+        margin-bottom:10px;
+    }
+
+    ul.skills li:last-child{
+        margin:0;
+    }
+
+    /*
+     Float Rules
+    */
+    .row:before, .row:after { content: "";
+        display: table;
+    }
+    .row:after { clear: both }
+    .col { float: left }
+    .col-right { float: right }
+
+    /*
+     Page Rules
+    */
+    .page { width: 1000px;
+        min-height: 29.7cm;
+        margin: 1cm auto;
+
+        background: white;
+        padding: 20px 50px;
+    }
+
+
+    @page { size: A4;
+        margin: 0;
+    }
+
+    @media print {
+        .page { margin: 0;
+            border: initial;
+            border-radius: initial;
+            width: initial;
+            min-height: initial;
+            box-shadow: initial;
+            background: initial;
+            page-break-after: always;
+        }
+        .page-break{
+            page-break-before: always;
+            padding-top:30px;
+        }
+
+        body { font-size: 12pt;}
+        h1{
+            font-size: 23pt;
+        }
+
+        h2{
+            font-size:10pt;
+            width: 3cm;
+            padding-left: 10px;
+        }
+
+        h3 { font-size: 10pt; line-height:11pt}
+
+        .section-text { font-size: 9pt; line-height: 14pt; }
+
+        .light { font-size: 7.5pt; line-height:12pt; color:#ddd; }
+
+        .page { width: 21cm }
+        ul {margin:5px 0 0}
+        .section { padding: 5px 0 8px }
+        .section-text { width: 15cm; margin: 5px 0 5px;}
+        .subsection { margin: 5px 0 0 }
+        .desc { font-size: 9pt }
+
+        .contact-info { font-size: 9pt}
+
+        ul.skills{margin: 0 10px 0 0;}
+        ul.skills li{ font-size: 9pt; margin-bottom:0}
+
+    }
+</style>
+<div class="page">
+  <div class="section row">
+    <h1 class="col"><span style="font-weight:700">Chuan</span> Yu</h1>
+    <div class="contact-info col-right">
+      <div>(862)371-9065</div>
+      <div><a href="mailto:cy95@njit.edu">cy95@njit.edu</a></div>
+      <div><a href="https://github.com/empireyc">https://github.com/empireyc</a></div>
+      <div><a href="https://techhangout.herokuapp.com">https://techhangout.herokuapp.com</a></div>
+    </div>
+  </div>
+  <div class="section row">
+    <h2 class="col">Skills</h2>
+    <div class="section-text col-right row">
+      <ul class="skills" style="width:25%">
+        <li>Java, Android</li>
+        <li>Javascript</li>
+        <li>Ruby</li>
+        <li>HTML, CSS</li>
+      </ul>
+      <ul class="skills" style="width:35%">
+        <li>Objective-c, Swift</li>
+        <li>jQuery, Ajax</li>
+        <li>Ruby on Rails</li>
+        <li>Bootstrap</li>
+
+      </ul>
+      <ul class="skills">
+        <li>MySQL, Oracle</li>
+        <li>JSP, Servlet, JDBC</li>
+        <li>Struts2, Hibernate, Spring</li>
+        <li>Git, Eclipse, RubyMine</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section row">
+    <h2 class="col">Education</h2>
+    <div class="section-text col-right">
+      <h3><span class="emph">Master of Science</span> in Computer Science</h3>
+      <div>New Jersey Institute of Technology</div>
+      <div class="row">
+        <div class="col light">Newark,NJ, USA</div>
+        <div class="col-right light">September 2013 - December 2014</div>
+      </div>
+    </div>
+    <div class="section-text col-right">
+      <h3><span class="emph">Bachelor of Engineering</span> in Software Engineering</h3>
+      <div>Heilongjiang Institute of Technology</div>
+      <div class="row">
+        <div class="col light">Heilongjiang, China</div>
+        <div class="col-right light	">September 2008 - July 2012	</div>
+      </div>
+    </div>
+  </div>
+  <div class="section row">
+    <h2 class="col">Experience</h2>
+    <div class="section-text col-right">
+      <div class="row">
+        <div class="col">
+          <h3>Budget Payment System, Miracle Technology, Beijing</h3>
+        </div>
+      </div>
+      <div class="row subsection">
+        <div class="emph col">Software Developer</div>
+        <div class="col-right light">October 2011 - January 2012</div>
+      </div>
+      <div>Develop J2EE project - JSP, Struts2, Oracle, Tomcat </div>
+      <ul class="desc">
+        <li>Responsibilities:</li>
+        <li>Implemented CRUD for employee and expenditure management.</li>
+        <li>Implemented monthly budget summary, monthly budget allocation, monthly budget effectiveness, monthly budget query and export.</li>
+        <li>Implemented fund transfer application and fund transfer query.</li>
+        </ul>
+    </div>
+  </div>
+  <div class="section row">
+    <h2 class="col">Projects</h2>
+    <div class="section-text col-right">
+      <div class="row">
+        <div class="col">
+          <h3>Photo Share App for iOS</h3>
+        </div>
+        <div class="row subsection">
+          <div class="col-right light">March 2015</div>
+        </div>
+      </div>
+      <ul class="desc">
+        <li>Implemented:</li>
+        <li>Use Swift and Facebook Parse SDK to develop this app.</li>
+        <li>Sign up or log in directly with Facebook account.</li>
+        <li>Share photos to public, view your own photos and delete unwanted photos.</li>
+        <li>Follow or unfollow users and view photos of users that you are following.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section row">
+    <div class="section-text col-right">
+      <div class="row">
+        <div class="col">
+          <h3>News Client for Android</h3>
+        </div>
+        <div class="row subsection">
+          <div class="col-right light">October 2014 - November 2014</div>
+        </div>
+      </div>
+      <ul class="desc">
+        <li>Implemented:</li>
+        <li>Use Fragment and ViewPager to display different UI.</li>
+        <li>Start thread to request data from server; Parse JSON data.</li>
+        <li>Pull down ListView to refresh data and pull up to load more data.</li>
+        <li>Save images in memory and SDcard to reduce loading images from server.</li>
+        <li>Create ViewHolder and reuse convertView to optimize ListView.</li>
+        <li>Use SlidingMenu, ViewPagerIndicator and XUtils open source frameworks.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section row">
+    <div class="section-text col-right">
+      <div class="row">
+        <div class="col">
+          <h3>Video Store System</h3>
+        </div>
+        <div class="row subsection">
+          <div class="col-right light">April 2014 - May 2014</div>
+        </div>
+      </div>
+      <ul class="desc">
+        <li>Implemented:</li>
+        <li>Use JSP, Servlet, JDBC, MySQL and Tomcat to develop this web project.</li>
+        <li>Rental Management: CRUD for movies; Show status of movies.</li>
+        <li>Member Management: CRUD for members; Show borrowed, reserved movies and
+          unpaid amount by each member; Return and pay for movies.</li>
+        <li>Reporting Management: Query total number of rental movies per store and per month;
+          Query 10 most frequently reserved movies for the last year; Query 10 best customers</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section row">
+    <div class="section-text col-right">
+      <div class="row">
+        <div class="col">
+          <h3>Mobile Safe Guard for Android</h3>
+        </div>
+        <div class="row subsection">
+          <div class="col-right light">January 2014 - March 2014</div>
+        </div>
+      </div>
+      <ul class="desc">
+        <li>Implemented:</li>
+        <li>Send message to find/alarm/lock/wipe lost or stolen device.</li>
+        <li>Set black numbers to intercept phone calls.</li>
+        <li>Remove unnecessary background processes, free up memory to make device run faster.</li>
+        <li>Scan system and user-installed apps to keep device safe from viruses.</li>
+        <li>Uninstall unwanted apps and clean caches to save space.</li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
 </div>
